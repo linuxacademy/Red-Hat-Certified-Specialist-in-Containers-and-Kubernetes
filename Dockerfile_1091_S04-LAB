@@ -1,0 +1,21 @@
+#Please use image registry.access.redhat.com/ubi8/ubi:8.4
+
+#Set yourself as the Maintainer of this image.
+
+#Provide a breif description of the image.
+LABEL description=
+#Install nginx and unzip
+
+#Use ENV to set the variable PORT to 90
+
+#Use the variable $PORT to expose the set port
+
+#Copy nginx.zip to /tmp/
+
+#Extract /tmp/nginx.zip to /etc/nginx and overwrite any existing files
+
+#Extract llama_cart.tar to /usr/share/nginx/html/
+
+#Set the workdir to /tar_file/ and copy llama_cart.tar to this directory without uncompressing it.
+
+#Set the container to start "nginx" with options "-g" and "daemon off" as overwrittable options.
