@@ -1,8 +1,8 @@
 apiVersion: template.openshift.io/v1
 kind: Template
 labels:
-  app: nodejs-postgresql-persistent
-  template: nodejs-postgresql-persistent
+  app: multi-test-postgresql-persistent
+  template: multi-postgresql-persistent
 message: |-
   The following service(s) have been created in your project: ${NAME}, ${DATABASE_SERVICE_NAME}.
 
@@ -12,22 +12,22 @@ metadata:
     description: An example Node.js application with a PostgreSQL database. For more
       information about using this template, including OpenShift considerations, see
       https://github.com/nodeshift-starters/nodejs-rest-http-crud/blob/master/README.md.
-    iconClass: icon-nodejs
-    openshift.io/display-name: Node.js + PostgreSQL
+    iconClass: 
+    openshift.io/display-name: Multi-Container Test
     openshift.io/documentation-url: https://github.com/nodeshift-starters/nodejs-rest-http-crud
     openshift.io/long-description: This template defines resources needed to develop
       a NodeJS application, including a build configuration, application deployment
       configuration, and database deployment configuration.
-    openshift.io/provider-display-name: Red Hat, Inc.
-    openshift.io/support-url: https://access.redhat.com
+    openshift.io/provider-display-name: JB
+    openshift.io/support-url: 
     samples.operator.openshift.io/version: 4.8.5
     tags: quickstart,nodejs
     template.openshift.io/bindable: "false"
   creationTimestamp: "2021-09-02T13:42:21Z"
   labels:
     samples.operator.openshift.io/managed: "true"
-  name: nodejs-postgresql-persistent
-  namespace: openshift
+  name: multi-test-postgresql-persistent
+  namespace: 
   resourceVersion: "14091"
   uid: bc4db629-54f1-4929-a993-a6f455a1ef4b
 objects:
