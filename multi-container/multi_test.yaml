@@ -6,19 +6,17 @@ labels:
 message: |-
   The following service(s) have been created in your project: ${NAME}, ${DATABASE_SERVICE_NAME}.
 
-  For more information about using this template, including OpenShift considerations, see https://github.com/nodeshift-starters/nodejs-rest-http-crud/blob/master/README.md.
+  For more information about using this template, including OpenShift considerations, see https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes/blob/main/nodejs-rest-http-crud/README.md.
 metadata:
   annotations:
-    description: An example Node.js application with a PostgreSQL database. For more
-      information about using this template, including OpenShift considerations, see
-      https://github.com/nodeshift-starters/nodejs-rest-http-crud/blob/master/README.md.
+    description: An example Node.js application with a PostgreSQL database. 
+      modified from openshift example template Node.js+PostgreSQL and a application 
+      https://github.com/nodeshift-starters/nodejs-rest-http-crud/
     iconClass: 
     openshift.io/display-name: Multi-Container Test
     openshift.io/documentation-url: https://github.com/nodeshift-starters/nodejs-rest-http-crud
-    openshift.io/long-description: This template defines resources needed to develop
-      a NodeJS application, including a build configuration, application deployment
-      configuration, and database deployment configuration.
-    openshift.io/provider-display-name: JB
+    openshift.io/long-description:
+    openshift.io/provider-display-name: JB 
     openshift.io/support-url: 
     samples.operator.openshift.io/version: 4.8.5
     tags: quickstart,nodejs
@@ -310,7 +308,7 @@ parameters:
   displayName: Git Repository URL
   name: SOURCE_REPOSITORY_URL
   required: true
-  value: https://github.com/nodeshift-starters/nodejs-rest-http-crud.git
+  value: https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes
 - description: Set this to a branch name, tag or other ref of your repository if you
     are not using the default branch.
   displayName: Git Reference
@@ -319,6 +317,7 @@ parameters:
     of your repository.
   displayName: Context Directory
   name: CONTEXT_DIR
+  value: nodejs-rest-http-crud
 - description: The exposed hostname that will route to the Node.js service, if left
     blank a value will be defaulted.
   displayName: Application Hostname
