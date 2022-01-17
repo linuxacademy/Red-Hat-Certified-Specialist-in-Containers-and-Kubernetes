@@ -35,5 +35,5 @@ podman rm temp
 podman pull docker.io/library/mysql
 podman tag mysql insec-registry:5001/llama-web-db:v1
 podman push --tls-verify=false insec-registry:5001/llama-web-db:v1 insec-registry:5001/llama-web-db:v1
-podman rmi nginx mysql sec-registry:5000/nginx:useme sec-registry:5001/llama-web-db:v1 
+podman rmi nginx mysql sec-registry:5000/nginx:useme insec-registry:5001/llama-web-db:v1 
 podman logout sec-registry:5000
