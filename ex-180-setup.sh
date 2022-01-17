@@ -29,7 +29,7 @@ podman exec temp bash -c "echo 'Replace Me' > /usr/share/nginx/html/index.html"
 podman stop temp
 podman commit temp sec-registry:5000/nginx:useme
 podman push nginx sec-registry:5000/nginx:latest
-podman push sec-registry:5000/nginx:v1 sec-registry:5000/nginx:useme
+podman push sec-registry:5000/nginx:useme sec-registry:5000/nginx:useme
 podman stop temp
 podman rm temp
 podman pull docker.io/library/mysql
