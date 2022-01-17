@@ -17,6 +17,9 @@ podman run --name myregistry -p 5000:5000 -v /opt/registry/data:/var/lib/registr
 #start an insecure registry on port 5001
 podman run --name myregistry-2 -p 5001:5000 -d docker.io/library/registry:latest
 
+#add alias to localhost in /etc/hosts file
+sed -ie '1s/$/ sec-registry insec-registry/' /etc/hosts
+
 #login and push some starting images
 echo badpass | podman login -u cloud_user --password-stdin sec-registry:5000
 podman pull docker.io/library/nginx
@@ -30,7 +33,7 @@ podman push sec-registry:5000/nginx:v1 sec-registry:5000/nginx:useme
 podman stop temp
 podman rm temp
 podman pull docker.io/library/mysql
-podman tag mysql sec-registry:5001/llama-web-db:v1
-podman push --tls-verify=false sec-registry:5001/llama-web-db:v1 sec-registry:5001/llama-web-db:v1
+podman tag mysql insec-registry:5001/llama-web-db:v1
+podman push --tls-verify=false insec-registry:5001/llama-web-db:v1 insec-registry:5001/llama-web-db:v1
 podman rmi nginx mysql sec-registry:5000/nginx:useme sec-registry:5001/llama-web-db:v1 
 podman logout sec-registry:5000
