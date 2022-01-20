@@ -18,7 +18,7 @@ podman run --name myregistry -p 5000:5000 -v /opt/registry/data:/var/lib/registr
 podman run --name myregistry-2 -p 5001:5000 -d docker.io/library/registry:latest
 
 #add alias to localhost in /etc/hosts file
-sed -ie '1s/$/ sec-registry insec-registry/' /etc/hosts
+sed -ie '1s/$/ registry-1 registry-2/' /etc/hosts
 
 #create some directories and files in cloud_user home
 mkdir -p /home/cloud_user/{web,docker,files}
@@ -28,19 +28,19 @@ wget https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-
 wget -O /home/cloud_user/docker/Dockerfile https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes/raw/main/Dockerfile_exam_lab
 
 #login and push some starting images
-echo badpass | podman login -u cloud_user --password-stdin sec-registry:5000
+echo badpass | podman login -u cloud_user --password-stdin registry-1:5000
 podman pull docker.io/library/nginx
 podman run -d --name=temp -p 8080:80 docker.io/library/nginx
 podman exec temp bash -c "apt-get update && apt-get install -y vim"
 podman exec temp bash -c "echo 'Replace Me' > /usr/share/nginx/html/index.html"
 podman stop temp
-podman commit temp sec-registry:5000/nginx:useme
-podman push nginx sec-registry:5000/nginx:latest
-podman push sec-registry:5000/nginx:useme sec-registry:5000/nginx:useme
+podman commit temp registry-1:5000/nginx:useme
+podman push nginx registry-1:5000/nginx:latest
+podman push registry-1:5000/nginx:useme registry-1:5000/nginx:useme
 podman stop temp
 podman rm temp
 podman pull docker.io/library/mysql
-podman tag mysql insec-registry:5001/llama-web-db:v1
-podman push --tls-verify=false insec-registry:5001/llama-web-db:v1 insec-registry:5001/llama-web-db:v1
-podman rmi nginx mysql sec-registry:5000/nginx:useme insec-registry:5001/llama-web-db:v1 
-podman logout sec-registry:5000
+podman tag mysql registry-2:5001/llama-web-db:v1
+podman push --tls-verify=false registry-2:5001/llama-web-db:v1 registry-2:5001/llama-web-db:v1
+podman rmi nginx mysql registry-1:5000/nginx:useme registry-2:5001/llama-web-db:v1 
+podman logout registry-1:5000
