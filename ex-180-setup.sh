@@ -20,9 +20,11 @@ podman run --name myregistry-2 -p 5001:5000 -d docker.io/library/registry:latest
 #add alias to localhost in /etc/hosts file
 sed -ie '1s/$/ sec-registry insec-registry/' /etc/hosts
 
-#create web directory and new index.html file in cloud_user home
-mkdir /home/cloud_user/web
+#create some directories and files in cloud_user home
+mkdir -p /home/cloud_user/{web,build,files}
 echo 'If you are seeing this using curl then the Objective is complete!!!' > /home/cloud_user/web/index.html
+wget https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes/raw/main/llama_cart.tar -P /home/cloud_user/files
+wget https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes/raw/main/nginx_conf.zip -P /home/cloud_user/files
 
 #login and push some starting images
 echo badpass | podman login -u cloud_user --password-stdin sec-registry:5000

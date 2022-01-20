@@ -10,9 +10,9 @@ LABEL description=
 
 #Use the variable $PORT to expose the set port
 
-#Copy nginx.zip to /tmp/
+#Copy nginx_conf.zip to /tmp/
 
-#Extract /tmp/nginx.zip to /etc/nginx and overwrite any existing files
+#Extract /tmp/nginx_conf.zip to /etc/nginx and overwrite any existing files
 
 #Extract llama_cart.tar to /usr/share/nginx/html/
 
