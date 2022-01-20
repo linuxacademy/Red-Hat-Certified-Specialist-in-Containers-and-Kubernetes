@@ -25,6 +25,7 @@ mkdir -p /home/cloud_user/{web,build,files}
 echo 'If you are seeing this using curl then the Objective is complete!!!' > /home/cloud_user/web/index.html
 wget https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes/raw/main/llama_cart.tar -P /home/cloud_user/files
 wget https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes/raw/main/nginx_conf.zip -P /home/cloud_user/files
+wget -O /home/cloud_guru/build/Dockerfile https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes/raw/main/Dockerfile_exam_lab
 
 #login and push some starting images
 echo badpass | podman login -u cloud_user --password-stdin sec-registry:5000
