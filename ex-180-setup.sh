@@ -22,7 +22,7 @@ sed -ie '1s/$/ sec-registry insec-registry/' /etc/hosts
 
 #create web directory and new index.html file in cloud_user home
 mkdir /home/cloud_user/web
-echo 'If you are seeing this using curl then Objective one is complete!!!' > /home/cloud_user/web/index.html
+echo 'If you are seeing this using curl then the Objective is complete!!!' > /home/cloud_user/web/index.html
 
 #login and push some starting images
 echo badpass | podman login -u cloud_user --password-stdin sec-registry:5000
