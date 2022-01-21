@@ -5,7 +5,7 @@ htpasswd -bBc /opt/registry/auth/htpasswd cloud_user badpass
 
 
 #setup new cert
-openssl req -newkey rsa:4096 -nodes -sha256 -keyout /opt/registry/certs/domain.key -x509 -days 365 -out /opt/registry/certs/domain.crt -addext 'subjectAltName = DNS:localhost, DNS:sec-registry' -subj '/C=US/ST=Washington/L=Seattle/O=ACG/OU=Podman/CN=localhost'
+openssl req -newkey rsa:4096 -nodes -sha256 -keyout /opt/registry/certs/domain.key -x509 -days 365 -out /opt/registry/certs/domain.crt -addext 'subjectAltName = DNS:localhost, DNS:registry-1' -subj '/C=US/ST=Washington/L=Seattle/O=ACG/OU=Podman/CN=localhost'
 
 #copy cert to /etc/pki
 /usr/bin/cp /opt/registry/certs/domain.crt /etc/pki/ca-trust/source/anchors/
