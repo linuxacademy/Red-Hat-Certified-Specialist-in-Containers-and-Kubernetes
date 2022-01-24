@@ -2,7 +2,7 @@
 
 #Set yourself as the Maintainer of this image.
 
-#Provide a brief description of the image.
+#Provide a brief description of the image. An example might be "my first eam build", but put whatever you would like.
 LABEL description=
 #Install nginx and unzip
 
