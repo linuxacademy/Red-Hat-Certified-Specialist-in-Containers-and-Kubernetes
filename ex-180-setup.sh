@@ -26,6 +26,10 @@ echo 'If you are seeing this using curl then the Objective is complete!!!' > /ho
 wget https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes/raw/main/llama_cart.tar -P /home/cloud_user/files
 wget https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes/raw/main/nginx_conf.zip -P /home/cloud_user/files
 wget -O /home/cloud_user/docker/Dockerfile https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes/raw/main/Dockerfile_exam_lab
+chown -R cloud_user:cloud_user /home/cloud_user/docker /home/cloud_user/files
+
+#break SElinux for directory used in task 2
+chcon -R -u unconfined_u -r object_r -t user_home_t /home/cloud_user/web
 
 #login and push some starting images
 echo badpass | podman login -u cloud_user --password-stdin registry-1:5000

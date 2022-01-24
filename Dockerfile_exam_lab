@@ -2,7 +2,7 @@
 
 #Set yourself as the Maintainer of this image.
 
-#Provide a brief description of the image. An example might be "my first eam build", but put whatever you would like.
+#Provide a brief description of the image.
 LABEL description=
 #Install nginx and unzip
 
@@ -12,10 +12,10 @@ LABEL description=
 
 #Copy nginx_conf.zip to /tmp/
 
-#Extract /tmp/nginx_conf.zip to /etc/nginx and overwrite any existing files
+#Extract /tmp/nginx_conf.zip to /etc/nginx and overwrite any existing files (hint use -o and -d options for unzip)
 
 #Extract llama_cart.tar to /usr/share/nginx/html/
 
 #Set the workdir to /tar_file/ and copy llama_cart.tar to this directory without uncompressing it.
 
-#Set the container to start "nginx" with options "-g" and "daemon off" as overwrittable options.
+#Set the container to start "nginx" with options "-g" and "daemon off" as overwrittable options(hint use ENTRYPOINT and CMD).
