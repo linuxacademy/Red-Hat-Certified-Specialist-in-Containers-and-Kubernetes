@@ -23,8 +23,8 @@ sed -ie '1s/$/ registry-1 registry-2/' /etc/hosts
 #create some directories and files in cloud_user home
 mkdir -p /home/cloud_user/{web,docker,files}
 echo 'If you are seeing this using curl then the Objective is complete!!!' > /home/cloud_user/web/index.html
-wget https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes/raw/main/llama_cart.tar -P /home/cloud_user/files
-wget https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes/raw/main/nginx_conf.zip -P /home/cloud_user/files
+wget https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes/raw/main/llama_cart.tar -P /home/cloud_user/files/
+wget https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes/raw/main/nginx_conf.zip -P /home/cloud_user/files/
 wget -O /home/cloud_user/docker/Dockerfile https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes/raw/main/Dockerfile_exam_lab
 chown -R cloud_user:cloud_user /home/cloud_user/docker /home/cloud_user/files
 
