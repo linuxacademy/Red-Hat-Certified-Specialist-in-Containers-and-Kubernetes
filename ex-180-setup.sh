@@ -50,4 +50,4 @@ podman rmi nginx mysql registry-1:5000/nginx:useme registry-2:5001/llama-web-db:
 podman logout registry-1:5000
 
 #create a pod for a task
-podman pod create --name=task-2 -p 8081:80
+su - cloud_user -c 'podman pod create --name=task-2 -p 8081:80'
