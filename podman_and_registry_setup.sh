@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#DOWNLOAD AND RUN SCRIPT LOCALLY
+
 #install some packages
 yum -y install httpd-tools
 yum -y module install container-tools:3.0
