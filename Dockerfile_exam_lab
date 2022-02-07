@@ -18,4 +18,4 @@ LABEL description=
 
 #Set the workdir to /tar_file/ and copy llama_cart.tar to this directory without uncompressing it.
 
-#Set the container to start "nginx" with options "-g" and "daemon off" as overwrittable options(hint use ENTRYPOINT and CMD).
+#Set the container to start "nginx" with options "-g" and "daemon off" as overwritable options(hint use ENTRYPOINT and CMD).
