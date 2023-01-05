@@ -1,0 +1,22 @@
+#Use Red Hat Universal Base Image 8.4
+FROM registry.access.redhat.com/ubi8/ubi:8.4
+#Who maintains this Dockerfile
+MAINTAINER JustinB
+#Use yum to install Nginx
+RUN yum install -y nginx
+#Use ENV to set the variable PORT to 90
+
+#Use ADD to pull a file from a URL into the image
+ADD https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes/raw/main/nginx.port_change_88.conf /etc/nginx/conf.d/
+
+#Use COPY to copy a file from build directory to /etc/nginx
+COPY nginx.port_change_123.conf /etc/nginx/
+
+#Use ADD to uncompress a tar file automatically to /
+ADD nginx_conf.tar /
+
+#Use COPY to copy a tar file but DO NOT uncompress it.
+COPY nginz_conf.tar /tmp/
+
+#Entrypoint to start Nginx
+ENTRYPOINT ["nginx", "-g", "daemon off;""]
