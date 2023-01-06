@@ -1,5 +1,5 @@
 #Please use image registry.access.redhat.com/ubi8/ubi:8.4
-FROM regisrty.access.redhat.com/ubi8/ubi:8.4
+FROM registry.access.redhat.com/ubi8/ubi:8.4
 #Set yourself as the Maintainer of this image.
 MAINTAINER JustinB
 #Provide a brief description of the image.
