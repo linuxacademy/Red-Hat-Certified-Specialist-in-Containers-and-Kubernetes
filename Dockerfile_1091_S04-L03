@@ -16,7 +16,7 @@ COPY nginx.port_change_123.conf /etc/nginx/
 ADD nginx_conf.tar /
 
 #Use COPY to copy a tar file but DO NOT uncompress it.
-COPY nginz_conf.tar /tmp/
+COPY nginx_conf.tar /tmp/
 
 #Entrypoint to start Nginx
-ENTRYPOINT ["nginx", "-g", "daemon off;""]
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
