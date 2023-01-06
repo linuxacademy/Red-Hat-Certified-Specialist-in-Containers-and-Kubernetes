@@ -7,9 +7,9 @@ LABEL description="test llama-cart website"
 #Install nginx and unzip
 RUN yum install -y nginx unzip
 #Use ENV to set the variable PORT to 90
-
+ENV PORT=90
 #Use the variable $PORT to expose the set port
-
+EXPOSE $PORT
 #Copy nginx.zip to /tmp/
 COPY nginx.zip /tmp/
 #Extract /tmp/nginx.zip to /etc/nginx and overwrite any existing files
