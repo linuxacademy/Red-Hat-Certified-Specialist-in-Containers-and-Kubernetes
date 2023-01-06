@@ -1,21 +1,24 @@
 #Please use image registry.access.redhat.com/ubi8/ubi:8.4
-
+FROM regisrty.access.redhat.com/ubi8/ubi:8.4
 #Set yourself as the Maintainer of this image.
-
+MAINTAINER JustinB
 #Provide a brief description of the image.
-LABEL description=
+LABEL description="test llama-cart website"
 #Install nginx and unzip
-
+RUN yum install -y nginx unzip
 #Use ENV to set the variable PORT to 90
 
 #Use the variable $PORT to expose the set port
 
 #Copy nginx.zip to /tmp/
-
+COPY nginx.zip /tmp/
 #Extract /tmp/nginx.zip to /etc/nginx and overwrite any existing files
-
+RUN unzip -o /tmp/nginx.zip -d /etc/nginx/
 #Extract llama_cart.tar to /usr/share/nginx/html/
-
+ADD llama_cart.tar /usr/share/nginx/html
 #Set the workdir to /tar_file/ and copy llama_cart.tar to this directory without uncompressing it.
-
+WORKDIR /tar_file/
+COPY llama_cart.tar .
 #Set the container to start "nginx" with options "-g" and "daemon off" as overwritable options.
+ENTRYPOINT ["nginx"]
+CMD ["-g", "daemon off;"]
